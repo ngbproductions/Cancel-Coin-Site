@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancel Coin (CNCL)</title>
+    <style>
+        body {
+            background: #000;
+            color: #fff;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #ff0000;
+            font-size: 3em;
+            text-transform: uppercase;
+        }
+        #timer {
+            font-size: 2.5em;
+            color: #ff0000;
+            margin: 20px 0;
+        }
+        .logo {
+            width: 200px;
+            margin: 20px auto;
+        }
+        .section {
+            max-width: 600px;
+            margin: 40px auto;
+            color: #00ff00;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cancel Coin (CNCL)</h1>
+    <p>Get Canceled, Get Rich.</p>
+    <img src="logo.png" alt="Cancel Coin Logo" class="logo">
+    <div id="timer"></div>
+    <div class="section">
+        <h2>Launch: March 10, 2025</h2>
+        <p>Offend to Ascend. Dropping on Pump.fun.</p>
+    </div>
+    <div class="section">
+        <h2>What is Cancel Coin?</h2>
+        <p>Cancel Coin is a satirical, edgy token that thrives on the chaos of cancel culture. It’s designed to poke at every sacred cow, rewarding holders for stirring the pot and punishing the "canceled" by burning their tokens. The idea is to gamify outrage — the more controversy it generates, the more value it accrues. It’s absurd, divisive, and unapologetic, making it a lightning rod for attention in the oversaturated meme coin space.</p>
+    </div>
+    <div class="section">
+        <h2>Tokenomics</h2>
+        <p>Total Supply: 1B CNCL<br>Burn: 1% of canceled wallets<br>Rewards: Airdrops for chaos<br>Tax: 0% — Pure freedom, no cuts.</p>
+    </div>
+    <script>
+        const launchDate = new Date("2025-03-10T00:00:00Z").getTime();
+        const timer = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            document.getElementById("timer").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("timer").innerHTML = "Launched!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
